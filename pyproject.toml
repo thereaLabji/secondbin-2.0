@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "secondbin"
+version = "2.0.0.dev1"
+description = "SecondBIN (sBIN), an extensible command-line terminal"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Proprietary" }
+authors = [{ name = "Secrip" }]
+dependencies = []
+
+[project.scripts]
+sbin = "secondbin.app:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
