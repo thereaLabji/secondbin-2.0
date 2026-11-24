@@ -1,4 +1,4 @@
-from secondbin.app import main
+from secrip.products.secondbin.app import main
 
 if __name__ == "__main__":
     raise SystemExit(main())
