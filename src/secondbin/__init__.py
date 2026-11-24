@@ -1,5 +1,15 @@
-"""SecondBIN (sBIN) terminal application."""
+"""Compatibility namespace; the canonical API is secrip.products.secondbin."""
 
-__version__ = "2.0.0.dev1"
-__app_name__ = "SecondBIN"
-__command_name__ = "sBIN"
+from secrip.products.secondbin import (
+    __app_name__,
+    __command_name__,
+    __version__,
+    Command,
+    CommandRegistry,
+    create_default_registry,
+)
+
+__all__ = [
+    "__app_name__", "__command_name__", "__version__",
+    "Command", "CommandRegistry", "create_default_registry",
+]
