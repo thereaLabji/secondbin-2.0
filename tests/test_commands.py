@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import patch
 
-from secondbin.commands import Command, CommandRegistry, create_default_registry
+from secrip.products.secondbin.commands import Command, CommandRegistry, create_default_registry
 
 
 class CommandRegistryTests(unittest.TestCase):
