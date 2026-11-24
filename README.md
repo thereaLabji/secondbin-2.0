@@ -62,6 +62,31 @@ Addon discovery must check each addon's directory for `AddonInit.py` before atte
 - **Clod3:** Cloudflare-hosted package and update services
 - **Licensing:** application license activation and verification
 
+## KPT and Clod3 plan
+
+KPT retains the two recovered installation workflows:
+
+- `kpt install <package>`: install a named package through the configured package index/mirror.
+- `kpt install <filename.tar.gz>`: retrieve a named archive directly from the package mirror. `.tar.gz` support is confirmed; other archive formats must be verified rather than assumed.
+
+Clod3 is the Cloudflare-hosted service for sBIN. Its initial deployment target is a `workers.dev` address.
+
+Planned Clod3 components:
+
+- **Workers:** HTTP API and request routing.
+- **R2:** package archive storage, including `.tar.gz`, `.whl`, and other supported archives.
+- **D1:** package metadata and license records.
+
+Proposed API routes:
+
+- `/api/packages` — package catalog.
+- `/api/packages/:name` — package metadata.
+- `/api/download/:name` — package download.
+- `/api/updates` — update information.
+- `/api/license/verify` — license verification.
+
+The route list is the current design outline; request/response schemas and the live `workers.dev` hostname have not yet been established. KPT must not hardcode the old private-LAN mirror address.
+
 ## Security
 
 Python addons execute code with the permissions of the user running sBIN. Only install addons from sources you trust. License verification secrets will remain server-side; no private signing key will be embedded in the executable.
