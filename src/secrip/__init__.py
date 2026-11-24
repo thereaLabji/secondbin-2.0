@@ -1,0 +1,1 @@
+"""Secrip product namespace."""
