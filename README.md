@@ -1,6 +1,6 @@
 # SecondBIN 2.0 (sBIN)
 
-SecondBIN is a custom, extensible command-line terminal. This repository is the clean 2.0 rebuild.
+SecondBIN is Secrip's custom, extensible command-line terminal. This repository is the clean 2.0 rebuild.
 
 ## Development status
 
@@ -10,7 +10,13 @@ The first bootstrap milestone provides:
 - Built-in commands: `help`, `clear`, `echo`, `version`, `date`, `time`, `pwd`, `ls`, `cd`, and `exit`
 - A Python package and console entry point
 
-The original project also had a KPT package manager, an addon system, licensing, and a private package mirror. These will be rebuilt as separate components rather than mixed into the terminal loop.
+The canonical Python API is `secrip.products.secondbin`. For example:
+
+```python
+from secrip.products import secondbin as sbin
+```
+
+The older top-level `secondbin` import remains as a compatibility layer.
 
 ## Requirements
 
@@ -29,7 +35,7 @@ Or without installing:
 
 ```powershell
 $env:PYTHONPATH = "src"
-py -m secondbin
+py -m secrip.products.secondbin
 ```
 
 ## Original addon compatibility notes
