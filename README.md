@@ -52,6 +52,8 @@ The six remembered `InitQueue` values are:
 
 These are documented as supported values only. Their exact execution semantics will be specified from the original design notes before the addon loader is implemented.
 
+Addon discovery must check each addon's directory for `AddonInit.py` before attempting to initialize that addon. If the file is missing, sBIN will skip that addon and emit a warning; it must not stop loading other addons.
+
 ## Planned components
 
 - **sBIN Core:** terminal, command registry, configuration
