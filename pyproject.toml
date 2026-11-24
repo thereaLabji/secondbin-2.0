@@ -13,7 +13,7 @@ authors = [{ name = "Secrip" }]
 dependencies = []
 
 [project.scripts]
-sbin = "secondbin.app:main"
+sbin = "secrip.products.secondbin.app:main"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
